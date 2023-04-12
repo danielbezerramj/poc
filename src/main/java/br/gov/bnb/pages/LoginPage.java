@@ -22,4 +22,8 @@ public class LoginPage extends DslPage {
     public void openPage(String url){
         setPage(url);
     }
+
+    public void quitePageTest(){
+        quiteDriver();
+    }
 }

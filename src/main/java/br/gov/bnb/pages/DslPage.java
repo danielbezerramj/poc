@@ -29,4 +29,10 @@ public class DslPage {
         new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(cmp));
         return driver.findElement(cmp).getText();
     }
+
+    public void quiteDriver(){
+        if(driver != null) {
+            driver.quit();
+        }
+    }
 }

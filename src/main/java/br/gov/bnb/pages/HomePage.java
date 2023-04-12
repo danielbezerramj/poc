@@ -1,5 +1,6 @@
 package br.gov.bnb.pages;
 
+import br.gov.bnb.factory.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,6 +18,10 @@ public class HomePage extends DslPage {
     }
 
     public String getMensagemAlertLoginByCss() {
+        System.out.println(getTextoAlert(alert));
         return getTextoAlert(alert);
+    }
+
+    public void quitePage(){
     }
 }
