@@ -17,13 +17,11 @@ public class BaseWeb {
 
     @Before
     public void preCondition() {
-        //String browserToUse = ReadProperties.getInstance().getValue("browser");
         String browserToUse = System.getProperty("browser", "Chrome");
         driver = new DriverFactory().createInstance(browserToUse);
     }
 
     public WebDriver getDriver() {
-        //String browserToUse = ReadProperties.getInstance().getValue("browser");
         String browserToUse = System.getProperty("browser", "Chrome");
         return driver = new DriverFactory().createInstance(browserToUse);
     }
