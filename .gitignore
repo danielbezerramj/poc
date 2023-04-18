@@ -17,6 +17,7 @@ local.properties
 
 # IntelliJ
 out/
+.idea/
 .idea_modules/
 .idea/replstate.xml
 .idea/sonarlint/
@@ -26,6 +27,7 @@ out/
 .idea/**/markdown-navigator/
 .idea/$CACHE_FILE$
 .idea/codestream.xml
+**/*.iml
 
 ### Maven ###
 target/
