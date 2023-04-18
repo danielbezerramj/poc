@@ -30,14 +30,8 @@ public class BaseWeb {
 
     @After
     public void postCondition() {
-       /* if (driver != null) {
-            driver.quit();
-        }*/
-    }
 
-    /*public void quiteDriver() {
-        driver.quit();
-    }*/
+    }
 
     protected void getScreenShot() throws IOException {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
