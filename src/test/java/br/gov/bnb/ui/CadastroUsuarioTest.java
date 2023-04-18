@@ -25,7 +25,7 @@ public class CadastroUsuarioTest extends BaseWeb {
     }
 
     @Test
-    public void testTelaHome() throws IOException {
+    public void validaTelaHomeTest() throws IOException {
         getScreenShot();
         assertEquals("×\nEmail e/ou senha inválidos", home.getMensagemAlertLoginByCss());
     }
