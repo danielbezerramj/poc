@@ -13,15 +13,18 @@ import static org.hamcrest.Matchers.*;
 public class ApiUsuariosTest extends BaseApi {
 
     private  JSONObject requestParams = new JSONObject();
+    
     @Test
     public void testRetornaListaUsuarios(){
-        Response response = given().relaxedHTTPSValidation().header("Accept", "application/json").when().get("/usuarios");
+        Response response = given().when().get("/usuarios");
+        
         Assert.assertEquals(200, response.statusCode());
         Assert.assertTrue(response.asPrettyString().contains("Fulano"));
     }
+    
     @Test
     public void testRetornaListaUsuariosComParametro(){
-        given().relaxedHTTPSValidation().header("Accept","application/json").when().get("/usuarios?nome=Fulano").then()
+        given().when().get("/usuarios?nome=Fulano").then()
                 .log().all()
                 .statusCode(HttpStatus.SC_OK)
                 .body(containsString("quantidade"))
@@ -36,8 +39,7 @@ public class ApiUsuariosTest extends BaseApi {
         requestParams.put("password", "teste");
         requestParams.put("administrador", "true");
 
-        given().relaxedHTTPSValidation().header("Accept","application/json").contentType("application/json")
-                .body(requestParams.toString())
+        given().when().body(requestParams.toString())
                 .log().all()
                 .when().post("/usuarios").then()
                 .log().all().statusCode(HttpStatus.SC_CREATED)
